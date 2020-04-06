@@ -25,8 +25,8 @@ export function reducer(state = INITIAL_STATE, action) {
 				...state,
 				todos: state.todos.map((todo) => {
 					if (todo.id == action.payload.id) {
-					todo.isCompleted=action.payload.isCompleted;
-					return todo
+						todo.isCompleted = action.payload.isCompleted;
+						return todo;
 					} else {
 						return todo;
 					}

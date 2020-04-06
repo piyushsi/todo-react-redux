@@ -21,60 +21,51 @@ class Todos extends React.Component {
 				() => this.props.dispatch(addTodo(this.state.todo))
 			);
 		}
-    };
-    del = (e) => {
-		 {
+	};
+	del = (e) => {
+		{
 			this.setState(
 				{
 					todo: { text: e.target.innerText, isCompleted: false, id: e.target.id },
-					
 				},
 				() => this.props.dispatch(delTodo(this.state.todo))
 			);
 		}
-    };
-    check = (e) => {
-        {
-           this.setState(
-               {
-                   todo: { text: e.target.innerText, isCompleted: e.target.checked, id: e.target.id },
-                   
-               },
-               () => this.props.dispatch(checkTodo(this.state.todo))
-           );
-       }
-   };
+	};
+	check = (e) => {
+		{
+			this.setState(
+				{
+					todo: { text: e.target.innerText, isCompleted: e.target.checked, id: e.target.id },
+				},
+				() => this.props.dispatch(checkTodo(this.state.todo))
+			);
+		}
+	};
 
 	render() {
 		return (
 			<main>
-                <header class="header">
-      </header>
-      
-      <section class="content">
-          <ul class="list">
-          <input class="custom_input" onKeyUp={this.add} placeholder='Add todo'/>
-          
-				{
-					this.props.todos.map((a) => {
-						return <li class="list__item">
-                            <label class="label--checkbox" id={a.id}>
-                <input onClick={this.check} id={a.id} type="checkbox" class="checkbox" />
-                <a className={`${a.isCompleted}`}>{a.text}</a>
-            </label>
-                          
-                            </li>;
-					})
-				 }
-          
-        
-          
-          
-        </ul>
-      </section>
-      
-				
-				
+				<header class="header"></header>
+
+				<section class="content">
+					<ul class="list">
+						<input class="custom_input" onKeyUp={this.add} placeholder="Add todo" />
+
+						{this.props.todos.map((a) => {
+							return (
+								<li class="list__item">
+									<label class="label--checkbox" id={a.id}>
+										<input onClick={this.check} id={a.id} type="checkbox" class="checkbox" />
+										<a className={`${a.isCompleted}`}>{a.text}</a>
+                                        
+									</label>
+                                    <button  id={a.id} onClick={this.del} className='delete'>x</button>
+								</li>
+							);
+						})}
+					</ul>
+				</section>
 			</main>
 		);
 	}

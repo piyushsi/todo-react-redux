@@ -128,30 +128,40 @@ table {
 	border-spacing: 0;
 }
 .custom_input {
-  width: 100%;
-  margin-bottom: .5rem;
-  border: 0;
-  border-bottom: 1px solid #009688;
-  outline: 0;
-  text-align: center;
-  font-size: 1rem;
-  color: #009688;
+	width: 100%;
+	margin-bottom: 0.5rem;
+	border: 0;
+	border-bottom: 1px solid #009688;
+	outline: 0;
+	text-align: center;
+	font-size: 1rem;
+	color: #009688;
 }
 
-a{
-  text-align: center;
-  word-break: break-all;
+a {
+	text-align: center;
+	word-break: break-all;
 }
-.true{
-  text-decoration: line-through;
-  color: #009688;
+.true {
+	text-decoration: line-through;
+	color: #009688;
 }
-.false{
-  color: grey;
+.false {
+	color: grey;
+}
+.delete{
+  border: 0;
+  outline: 0;
+  border-radius: 50%;
+  background-color: #009688;
+  color: white;
+  position: absolute;
+  right: 1rem;
+  
 }
 body {
-  font-size: 16px;
-  font-weight: 300;
+	font-size: 16px;
+	font-weight: 300;
 }
 
 .header {
