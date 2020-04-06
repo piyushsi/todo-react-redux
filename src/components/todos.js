@@ -65,6 +65,15 @@ class Todos extends React.Component {
 							);
 						})}
 					</ul>
+                    <div className='all_btn'>                 
+                    <button class="pure-material-button-contained">All</button>
+                    <button class="pure-material-button-contained">Active</button>
+                    <button class="pure-material-button-contained">Completed</button>
+    </div>
+
+
+
+                    
 				</section>
 			</main>
 		);
