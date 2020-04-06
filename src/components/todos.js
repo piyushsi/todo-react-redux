@@ -53,14 +53,14 @@ class Todos extends React.Component {
       
       <section class="content">
           <ul class="list">
-          <input class="custom_input" onKeyUp={this.add} />
+          <input class="custom_input" onKeyUp={this.add} placeholder='Add todo'/>
           
 				{
 					this.props.todos.map((a) => {
 						return <li class="list__item">
                             <label class="label--checkbox" id={a.id}>
                 <input onClick={this.check} id={a.id} type="checkbox" class="checkbox" />
-                <a>{a.text}</a>
+                <a className={`${a.isCompleted}`}>{a.text}</a>
             </label>
                           
                             </li>;

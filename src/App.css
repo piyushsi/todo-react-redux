@@ -142,6 +142,13 @@ a{
   text-align: center;
   word-break: break-all;
 }
+.true{
+  text-decoration: line-through;
+  color: #009688;
+}
+.false{
+  color: grey;
+}
 body {
   font-size: 16px;
   font-weight: 300;
