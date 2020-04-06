@@ -410,3 +410,7 @@ body {
 .none {
   display: none;
 }
+.added_material{
+  background-color: #fff;
+  color: #009688;
+}

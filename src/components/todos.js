@@ -30,6 +30,7 @@ class Todos extends React.Component {
 			this.setState(
 				{
 					todo: { text: e.target.innerText, isCompleted: false, id: e.target.id },
+					active: null,
 				},
 				() => this.props.dispatch(delTodo(this.state.todo))
 			);
@@ -153,15 +154,34 @@ class Todos extends React.Component {
 							  })}
 					</ul>
 					<div className="all_btn">
-						<button onClick={this.all} class="pure-material-button-contained">
-							All
-						</button>
-						<button onClick={this.completed} class="pure-material-button-contained">
-							Active
-						</button>
-						<button onClick={this.active} class="pure-material-button-contained">
-							Completed
-						</button>
+						{this.state.active == null ? (
+							<button onClick={this.all} class="pure-material-button-contained added_material">
+								All
+							</button>
+						) : (
+							<button onClick={this.all} class="pure-material-button-contained">
+								All
+							</button>
+						)}
+
+						{this.state.active == null ? (
+							<button onClick={this.active} class="pure-material-button-contained =">
+								Active
+							</button>
+						) : (
+							<button onClick={this.active} class="pure-material-button-contained added_material">
+								Active
+							</button>
+						)}
+						{this.state.active == null ? (
+							<button onClick={this.completed} class="pure-material-button-contained =">
+								Completed
+							</button>
+						) : (
+							<button onClick={this.completed} class="pure-material-button-contained added_material">
+								Completed
+							</button>
+						)}
 					</div>
 				</section>
 			</main>
